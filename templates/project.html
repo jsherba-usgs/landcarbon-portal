@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row t30">		
+		<div class="medium-12 columns">
+			<!--<ul id="navigation">
+				{% for key in item.keys() %}
+				<h2>{{key}}</h2>
+				<p>{{item[key]}}</p>
+			
+			{% endfor %}
+			</ul>-->
+			<ul id="navigation">
+				<h2>{{item.title}}</h2>
+				<h2>Summary</h2>
+				<p>{{item.summary}}</p>
+				<h2>Contacts</h2>
+				<p>Name:{{item.contacts[0].name}}<br>
+				Phone:{{item.contacts.officePhone}}<br>
+				Emaill:{{item.contacts[0].email}}</p>
+			</ul>
+ 		</div>
+</div>
+{% endblock %}

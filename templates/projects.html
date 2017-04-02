@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row t30">		
+		<div class="medium-12 columns">
+			<ul id="navigation">
+			{% for item in items["items"] %}
+				<h2>{{item.title}}</h2>
+				<p>{{item.summary}} <a href="{{ url_for('project', projectid = item.id) }}">Project details ></a></p>
+				
+				
+			{% endfor %}
+			</ul>
+ 		</div>
+</div>
+{% endblock %}

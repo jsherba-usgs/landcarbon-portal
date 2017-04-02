@@ -1,0 +1,60 @@
+.bandrow{
+	height:150px;
+	background-color:#002147;
+	width:100%;
+	max-width: none;
+	margin-right:0px;
+	margin-left:0px;
+}
+.banddiv{
+	padding-right:0px;
+	padding-left:0px;
+}
+.shadow{
+	    /*box-shadow: 0 10px 8px -4px rgba(0,0,0,.36);*/
+		box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+}
+#mapid{
+	z-index: 1; 
+}
+#navigation{
+	z-index: 2;
+}
+h2{
+	margin:0;
+}
+.multi-item-carousel{
+  .carousel-inner{
+    > .item{
+      transition: 500ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-33%;
+      }
+      &.right{
+        left:33%;
+      }
+    }
+    .next{
+      left: 33%;
+    }
+    .prev{
+      left: -33%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}

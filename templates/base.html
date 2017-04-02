@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="stylesheet" media="screen" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<link href="{{ url_for('static', filename='css/styles_feeling_responsive.css') }}" rel="stylesheet" media="screen">
+		<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="screen">
+		<!--<link href="{{ url_for('static', filename='css/leaflet.css') }}" rel="stylesheet" media="screen">-->
+		<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    </head>
+    <body id="top-of-page" class="page-fullwidth">
+		<div id="navigation" class="sticky">
+		  <nav class="top-bar" role="navigation" data-topbar>
+			<ul class="title-area">
+			  <li class="name">
+			  <h1 class="show-for-small-only"><a href=""> {{community_title}}</a></h1>
+			</li>
+			   <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+			  <li class="toggle-topbar menu-icon"><a href="#"><span>Navigation</span></a></li>
+			</ul>
+			<section class="top-bar-section">
+
+			  <ul class="right">
+					 
+					  <li class="divider"></li>
+					  <li><a href="http://software-carpentry.org/search/">Search</a></li>
+			  </ul>
+
+			  <ul class="left">
+					  <li><a href="{{ url_for('home') }}">Home</a></li>
+					  <li class="divider"></li>
+					  <li><a href="{{ url_for('projects') }}">Projects</a></li>
+					  <li class="divider"></li>
+					  <li><a href="">Data</a></li>
+					  <li class="divider"></li>
+					  <li><a href="">Publications</a></li>
+					  <li class="divider"></li>
+					  <li><a href="{{ url_for('about') }}">About</a></li>
+					  <li class="divider"></li>
+			  </ul>
+			</section>
+		  </nav>
+		</div><!-- /#navigation -->
+		
+	<div id="masthead-no-image-header" class="shadow" style="height: 90px">
+			<div class="row">
+				<div class="small-12 columns">
+					<h3 class="masthead">{{community_title}}</h3>
+				</div>
+			</div>
+		</div>
+		<!--<div class="jumbotron" style="background-size: 100%;height:300px; background-image: url({{ url_for('static', filename='img/gds_large.jpg') }});background-position: 0px 600px;">
+					
+		</div>-->
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+		 <div id="up-to-top" class="row">
+			  <div class="small-12 columns" style="text-align: right;">
+				<a class="iconfont" href="#top-of-page">&#xf108;</a>
+			  </div><!-- /.small-12.columns -->
+		</div><!-- /.row -->	
+		
+		
+	  <footer id="footer-content" class="bg-grau">
+		  <div id="footer">
+			<div class="row">
+			  <div class="medium-6 large-5 columns">
+				<h5 class="shadow-black">About This Site</h5>
+				<p class="shadow-black">
+				  The USGS Wetlands Carbon Working Group works on Wetlands Carbon projects accross the United States
+				  <a href="/about/">More ›</a>
+				</p>
+			  </div><!-- /.large-6.columns -->
+			  <div class="medium-3 large-3 large-offset-1 columns">
+					<h5 class="shadow-black">Services</h5>
+				  <ul class="no-bullet shadow-black">
+					  <li >
+						<a href=""  title=""></a>
+					  </li>
+					  <li >
+						<a href="/contact/"  title="Contact">Contact</a>
+					  </li>					
+					  <li >
+						<a href="/feed.xml"  title="Subscribe to RSS Feed">RSS</a>
+					  </li>
+					  <li >
+						<a href="/sitemap.xml"  title="Sitemap for Google Webmaster Tools">sitemap.xml</a>
+					  </li>
+				  </ul>
+			  </div><!-- /.large-4.columns -->
+
+			</div><!-- /.row -->
+
+		  </div><!-- /#footer -->
+		</footer>
+        
+    </body>
+	<script src="{{ url_for('static', filename='js/jquery-3.1.0.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<!--<script src="{{ url_for('static', filename='js/leaflet.js') }}"></script>-->
+	<<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+	<script src="{{ url_for('static', filename='js/javascript.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.2/esri-leaflet.js"></script>
+	
+	{% block scripts %}
+	{% endblock %}
+	
+	
+</html>
