@@ -18,7 +18,8 @@ news_id = '58ac67bfe4b0ce4410e7d6f2'
 sb = pysb.SbSession()
 # Get a private item.  Need to log in first.
 assessment_filter = 'assessment'
-sb.login('jsherba@usgs.gov', 'CamelliaBloom7&')
+username = raw_input("Username:  ")
+sb.loginc(str(username))
 # Need to wait a bit after the login or errors can occur
 #time.sleep(0)
 
